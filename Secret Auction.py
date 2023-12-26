@@ -67,11 +67,9 @@ print("Welcome to the Secret Auction")
 bidders = {}
 add_to_dictionary(bidders)
 more_bidders_prompt = "Are there other bidders? 'yes' or 'no': "
-more_bidders = remaining_bidders(more_bidders_prompt)
-if more_bidders == "yes":
+if (more_bidders := remaining_bidders(more_bidders_prompt)) == "yes":
   while more_bidders == "yes":
     clear()
     add_to_dictionary(bidders)
-    more_bidders = remaining_bidders(more_bidders_prompt)
-    if more_bidders == "no":
+    if (more_bidders := remaining_bidders(more_bidders_prompt)) == "no":
       determine_winner(bidders)
